@@ -171,8 +171,11 @@
 			// String - Template string for single tooltips
 			tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
 
-			// String - Template string for single tooltips
+			// String - Template string for multiple tooltips
 			multiTooltipTemplate: "<%= value %>",
+
+			// String - Template string for multiple tooltip title
+			multiTooltipTitleTemplate: "Tooltip title <%= label %>",
 
 			// String - Colour behind the legend colour block
 			multiTooltipKeyBackground: '#fff',
@@ -1100,7 +1103,7 @@
 						labels: tooltipLabels,
 						legendColors: tooltipColors,
 						legendColorBackground : this.options.multiTooltipKeyBackground,
-						title: template(this.options.tooltipTitleTemplate,ChartElements[0]),
+						title: template(this.options.multiTooltipTitleTemplate, ChartElements[0]),
 						chart: this.chart,
 						ctx: this.chart.ctx,
 						custom: this.options.customTooltips
